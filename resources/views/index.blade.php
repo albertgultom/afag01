@@ -33,14 +33,16 @@
     <script>
     (function(){
         var link = document.createElement("link");
-        link.href = "{!! elixir('css/final.css') !!}";
+        // link.href = "{!! elixir('css/final.css') !!}";
+        link.href = "{!! "css/final.css" !!}";
         link.type = "text/css";
         link.rel = "stylesheet";
         document.body.appendChild(link);
     })();
     </script>
 
-    <script src="{!! elixir('js/final.js') !!}" async></script>
+    <!-- <script src="{!! elixir('js/final.js') !!}" async></script> -->
+    <script src="{!! 'js/final.js' !!}" async></script>
 
 </body>
 </html>
