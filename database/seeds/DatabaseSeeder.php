@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MapelsTableSeeder::class);
         $this->call(StagesTableSeeder::class);
         $this->call(QuestionsTableSeeder::class);
+        $this->call(QuizzesTableSeeder::class);
+        $this->call(QuestionQuizTableSeeder::class);
     }
 }
