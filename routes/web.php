@@ -16,3 +16,5 @@
 Route::get('/', 'AngularController@serveApp');
 
 Route::get('/unsupported-browser', 'AngularController@unsupported');
+
+Route::get('home', 'StageController@home');

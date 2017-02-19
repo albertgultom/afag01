@@ -18,12 +18,12 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 			abstract: true,
             data: {},
 			views: {
-				header: {
-					templateUrl: getView('header')
-				},
-				footer: {
-					templateUrl: getView('footer')
-				},
+				// header: {
+				// 	templateUrl: getView('header')
+				// },
+				// footer: {
+				// 	templateUrl: getView('footer')
+				// },
 				main: {}
 			}
 		})
@@ -64,6 +64,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             views: {
                 'main@': {
                     templateUrl: getView('reset-password')
+                }
+            }
+        })
+        .state('app.home', {
+            url: '/home',
+            views: {
+                'main@': {
+                    templateUrl: getView('home')
                 }
             }
         });
