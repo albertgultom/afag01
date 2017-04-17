@@ -1,0 +1,25 @@
+.box-large{
+  margin: 1px;
+  font-size: 5em;
+  text-align: center;
+  line-height: 160px;
+  color: whitesmoke;
+}
+.boxwidth{
+  margin:0 25px;
+}
+.boxstage{
+  font-size: 6em;
+  font-weight: 900;
+  text-align: center;
+}
+.boxmaples{
+  font-size: x-large;
+  margin: 3px 20px 3px 0px;
+  line-height: 80px;
+  padding-left: 10px;
+}
+.box-large:hover,
+.boxmaples:hover{
+  opacity: .7;
+}

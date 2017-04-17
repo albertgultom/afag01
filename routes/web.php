@@ -20,3 +20,4 @@ Route::get('/unsupported-browser', 'AngularController@unsupported');
 Route::get('home', 'StageController@home');
 Route::get('quiz/{stage}/{mapel}/{type}', 'QuizzController@index');
 Route::get('quiz/show/{id}', 'QuizzController@show');
+Route::get('question/{stage}/{mapel}/', 'QuestionController@index');

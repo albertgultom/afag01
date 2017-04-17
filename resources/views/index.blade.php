@@ -20,9 +20,9 @@
 <body>
 
     <app-shell>
-        <div id="app-shell-header">
-            <img src="img/icons/logo.svg" width="171" height="41">
-        </div>
+        {{-- <div id="app-shell-header"> --}}
+            {{-- <img src="img/icons/logo.svg" width="171" height="41"> --}}
+        {{-- </div> --}}
         <div id="app-shell-content"></div>
     </app-shell>
 
@@ -43,6 +43,5 @@
 
     <!-- <script src="{!! elixir('js/final.js') !!}" async></script> -->
     <script src="{!! 'js/final.js' !!}" async></script>
-
 </body>
 </html>

@@ -1,17 +1,28 @@
 class SelectItemsController{
-    constructor(API, $log){
+    constructor(API, $log, $timeout){
         'ngInject';
 
         this.API = API;
         this.log = $log;
+        this.timeout = $timeout;
+        
     }
 
     $onInit(){
         this.API.all('home').get('').then((response)=>{
-            this.log.debug(response);
             this.stages = response[0];
             this.mapels = response[1];
         });
+    }
+
+    stageAnimate(sg,bg){
+        this.stageClass = true;
+        this.bgClass = bg;
+        this.sgClass = sg;
+    }
+
+    mapelAnimate(){
+        this.stageClass = false;
     }
 }
 

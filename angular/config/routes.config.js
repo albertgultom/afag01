@@ -31,7 +31,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/',
             views: {
                 'main@': {
-                    templateUrl: getView('landing')
+                    templateUrl: getView('home')
                 }
             }
         })
