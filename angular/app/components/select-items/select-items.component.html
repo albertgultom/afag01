@@ -1,30 +1,31 @@
 <md-content>
   <div layout="row" layout-wrap layout-align="center center" style="margin:10px 0;">
     <div
-      class="box-large fx-zoom-normal fx-speed-300" 
+      class="box-large" 
       ng-repeat="stage in vm.stages"
       ng-click="vm.stageAnimate(stage.alias,stage.colour)"
       ng-show="!vm.stageClass"
       flex="15"
       flex-sm="30"
-      flex-xs="50"
+      flex-xs="40"
       style="background-color: #{{stage.colour}};">
       <span>{{stage.alias}}</span>
     </div>
   </div>
   <div
     layout="row"
-    ng-show="vm.stageClass" 
+    layout-xs="column"
+    ng-show="vm.stageClass"
     class="boxwidth">
-    <div flex="20">
+    <div flex="20" flex-xs="100">
       <div class="boxstage">{{vm.sgClass}}</div>
-      <md-button ng-click="vm.mapelAnimate()" style="width:90%;">BACK</md-button>
+      <md-button ng-click="vm.mapelAnimate()" style="width:95%;">BACK</md-button>
     </div>
     <div flex>
       <div 
+        class="boxmapels" 
         ng-repeat="mapel in vm.mapels" 
         ng-show="vm.stageClass" 
-        class="boxmaples fx-fade-up" 
         style="background-color: #{{vm.bgClass}};">
         <span>{{mapel.fullname}}</span>
       </div>

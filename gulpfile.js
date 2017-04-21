@@ -29,7 +29,8 @@ elixir.config.js.folder = 'angular';
          'public/css/final.css'
      ],
      scripts = [
-         'public/js/vendor.js', 'public/js/app.js', 'bower_components/ngFx/dist/ngFx.min.js',
+         'public/js/vendor.js', 'public/js/app.js',
+         'bower_components/ngFx/dist/ngFx.js',
      ],
      styles = [
          // for some reason, ./ prefix here works fine!

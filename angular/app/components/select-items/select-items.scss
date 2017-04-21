@@ -1,3 +1,7 @@
+@import "bower_components/animatewithsass/_properties";
+@import "bower_components/animatewithsass/_bouncing-entrances/_bounceIn";
+@import "bower_components/animatewithsass/_bouncing-entrances/_bounceInRight";
+
 .box-large{
   margin: 1px;
   font-size: 5em;
@@ -5,21 +9,32 @@
   line-height: 160px;
   color: whitesmoke;
 }
+.box-large.ng-enter,
+.box-large.ng-hide-remove{
+  @include bounceIn($duration:.5s);
+}
 .boxwidth{
   margin:0 25px;
+  z-index: 1;
 }
 .boxstage{
   font-size: 6em;
   font-weight: 900;
   text-align: center;
 }
-.boxmaples{
+.boxmapels{
   font-size: x-large;
-  margin: 3px 20px 3px 0px;
+  margin: 3px 0 3px 0;
   line-height: 80px;
   padding-left: 10px;
 }
+.boxmapels.ng-enter,
+.boxmapels.ng-hide-remove{
+  @include bounceInRight(
+    $duration:.5s
+  );
+}
 .box-large:hover,
-.boxmaples:hover{
+.boxmapels:hover{
   opacity: .7;
 }

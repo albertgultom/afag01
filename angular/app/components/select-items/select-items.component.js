@@ -5,7 +5,6 @@ class SelectItemsController{
         this.API = API;
         this.log = $log;
         this.timeout = $timeout;
-        
     }
 
     $onInit(){
