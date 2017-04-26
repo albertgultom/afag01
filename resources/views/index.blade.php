@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#0690B7">
 
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="{!! 'css/font-awesome.min.css' !!}">
 
     <!--[if lte IE 10]>
     <script type="text/javascript">document.location.href = '/unsupported-browser'</script>

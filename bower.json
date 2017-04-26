@@ -19,6 +19,7 @@
     "angular-loading-bar": "~0.9.0",
     "satellizer": "^0.14.0",
     "ngFx": "^1.1.0",
-    "animatewithsass": "^3.2.2"
+    "animatewithsass": "^3.2.2",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }

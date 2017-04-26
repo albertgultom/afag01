@@ -1,10 +1,10 @@
-<md-content>
+<md-content style="background:transparent;">
   <div layout="row" layout-wrap layout-align="center center" style="margin:10px 0;">
     <div
       class="box-large" 
       ng-repeat="stage in vm.stages"
       ng-click="vm.stageAnimate(stage.alias,stage.colour)"
-      ng-show="!vm.stageClass"
+      ng-show="vm.stepClass == 'stages'"
       flex="15"
       flex-sm="30"
       flex-xs="40"
@@ -15,19 +15,44 @@
   <div
     layout="row"
     layout-xs="column"
-    ng-show="vm.stageClass"
+    ng-show="vm.stepClass != 'stages'"
     class="boxwidth">
     <div flex="20" flex-xs="100">
-      <div class="boxstage">{{vm.sgClass}}</div>
-      <md-button ng-click="vm.mapelAnimate()" style="width:95%;">BACK</md-button>
+      <div class="boxstage" style="background-color: #{{vm.bgClass}};">
+        <span>{{vm.sgClass}}</span>
+        <md-button ng-click="vm.goBack('stages')" style="width:95%;">RESET</md-button>
+      </div>
+
+      <div class="boxmapel" ng-show="vm.stepClass == 'options'" style="background-color: #{{vm.bgClass}};">
+        <span>{{vm.mpClass}}</span>
+        <md-button ng-click="vm.goBack('mapels')" style="width:95%;">RESET</md-button>
+      </div>
     </div>
-    <div flex>
+    <div class="boxchoosing" flex>
       <div 
-        class="boxmapels" 
+        class="box-width"
         ng-repeat="mapel in vm.mapels" 
-        ng-show="vm.stageClass" 
-        style="background-color: #{{vm.bgClass}};">
+        ng-click="vm.mapelAnimate(mapel.name)"
+        ng-show="vm.stepClass == 'mapels'">
         <span>{{mapel.fullname}}</span>
+      </div>
+      <div
+        layout="row" layout-wrap
+        class="view-option"
+        ng-show="vm.stepClass == 'options'"
+        style="margin-top: 3px;">
+        <!-- <div>CHOOSE YOUR OPTION</div> -->
+        <!-- <div layout="row" layout-wrap> -->
+          <div 
+            ng-repeat="opsi in vm.options"
+            flex="33"
+            flex-xs="50">
+            <div class="get-option" ng-click="vm.getAction(opsi.action)">
+              <i class="fa {{opsi.icon}} fa-5x"></i>
+              <p>{{opsi.name}}</p>
+            </div>
+          </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>

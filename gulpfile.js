@@ -49,6 +49,8 @@ elixir(mix => {
     mix.bower()
        .copy('angular/app/**/*.html', 'public/views/app/')
        .copy('angular/dialogs/**/*.html', 'public/views/dialogs/')
+       .copy('bower_components/font-awesome/fonts/**.*', 'public/fonts/')
+       .copy('bower_components/font-awesome/css/font-awesome.min.css', 'public/css/')
        .webpack('index.main.js', 'public/js/app.js')
        .sass(['**/*.scss', 'critical.scss'], 'public/css')
        .sass('critical.scss', 'public/css/critical.css')

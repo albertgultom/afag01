@@ -17,7 +17,10 @@ Route::get('/', 'AngularController@serveApp');
 
 Route::get('/unsupported-browser', 'AngularController@unsupported');
 
+// TESTING ROUTE
 Route::get('home', 'StageController@home');
 Route::get('quiz/{stage}/{mapel}/{type}', 'QuizzController@index');
 Route::get('quiz/show/{id}', 'QuizzController@show');
-Route::get('question/{stage}/{mapel}/', 'QuestionController@index');
+Route::get('soal/{mapel}/{stage}', 'QuestionController@bank');
+
+Route::get('test/{stage}', 'QuestionController@test');

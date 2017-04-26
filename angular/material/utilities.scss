@@ -1,3 +1,31 @@
+@import "bower_components/animatewithsass/animate.scss";
+
 .u-center{
     text-align: center;
+}
+.box-large.ng-enter,
+.box-large.ng-hide-remove{
+  @include bounceIn($duration:.5s);
+}
+.box-width.ng-enter,
+.box-width.ng-hide-remove{
+  @include bounceInRight(
+    $duration:.5s,
+    $delay:.2s
+  );
+}
+.boxmapel.ng-enter,
+.boxmapel.ng-hide-remove{
+  @include fadeIn();
+}
+.view-option.ng-enter,
+.view-option.ng-hide-remove{
+  @include fadeInUp(
+    $duration:.5s
+  );
+}
+@media screen and (min-width: 600px) {
+  .boxchoosing{
+    padding-left: 6px;
+  }
 }

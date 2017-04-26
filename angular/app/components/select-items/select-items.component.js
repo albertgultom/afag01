@@ -4,6 +4,8 @@ class SelectItemsController{
 
         this.API = API;
         this.log = $log;
+        this.bgClass = '';
+        this.mpClass = '';
         this.timeout = $timeout;
     }
 
@@ -12,16 +14,35 @@ class SelectItemsController{
             this.stages = response[0];
             this.mapels = response[1];
         });
+        this.stepClass = 'stages';
     }
 
     stageAnimate(sg,bg){
-        this.stageClass = true;
+        this.stepClass = 'mapels';
         this.bgClass = bg;
         this.sgClass = sg;
     }
 
-    mapelAnimate(){
-        this.stageClass = false;
+    mapelAnimate(mp){
+        this.stepClass = 'options';
+        this.mpClass = mp;
+        this.options = [
+            {name:'Bank Soal', icon:'fa-list', action:'soal'},
+            {name:'Ebook Soal', icon:'fa-book', action:'ebook'},
+            {name:'Tryout / Olimpiade', icon:'fa-pencil-square', action:'tryout'},
+            {name:'Kuis / Ulangan Harian', icon:'fa-file-text', action:'kuis'},
+            {name:'UJian / UN', icon:'fa-graduation-cap', action:'ujian'},
+        ];
+    }
+
+    getAction(data){
+        this.log.debug(this.sgClass);
+        this.log.debug(this.mpClass);
+        this.log.debug(data);
+    }
+
+    goBack(response){
+        this.stepClass = response;
     }
 }
 
