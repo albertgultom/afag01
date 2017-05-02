@@ -1,0 +1,27 @@
+<h1>Soal {{vm.mapel}}</h1>
+<md-tabs md-stretch-tabs="always" md-dynamic-height md-border-bottom>
+  <md-tab label="Pilihan Ganda">
+    <md-content class="md-padding">
+      <md-list-item class="md-2-line" ng-repeat="soal in vm.pgSoals" ng-click="null">
+        <div class="md-list-item-text" layout="column">
+          <h3>Kelas: {{soal.stage_id}}</h3>
+          <h4>Level: {{soal.level}}</h4>
+        </div>
+        <div class="cellQuestion">{{soal.question}}</div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-content>
+  </md-tab>
+  <md-tab label="Essay">
+    <md-content class="md-padding">
+      <md-list-item class="md-2-line" ng-repeat="soal in vm.esSoals" ng-click="null">
+        <div class="md-list-item-text" layout="column">
+          <h3>Kelas: {{soal.stage_id}}</h3>
+          <h4>Level: {{soal.level}}</h4>
+        </div>
+        <div class="cellQuestion">{{soal.question}}</div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-content>
+  </md-tab>
+</md-tabs>

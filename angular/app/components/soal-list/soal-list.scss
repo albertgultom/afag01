@@ -1,0 +1,24 @@
+.cellQuestion {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 2.3em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: .8em;
+  padding-left: 1em;
+}
+.cellQuestion:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.cellQuestion:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: .2em;
+}

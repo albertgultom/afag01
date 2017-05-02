@@ -35,6 +35,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('app.soal', {
+            url: '/soal/:mapel/:stage',
+            views: {
+                'main@': {
+                    templateUrl: getView('soal')
+                }
+            }
+        })
         .state('app.login', {
 			url: '/login',
 			views: {

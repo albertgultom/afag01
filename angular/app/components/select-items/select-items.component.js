@@ -1,12 +1,10 @@
 class SelectItemsController{
-    constructor(API, $log, $timeout){
+    constructor(API, $log, $state){
         'ngInject';
 
         this.API = API;
         this.log = $log;
-        this.bgClass = '';
-        this.mpClass = '';
-        this.timeout = $timeout;
+        this.state = $state;
     }
 
     $onInit(){
@@ -15,6 +13,8 @@ class SelectItemsController{
             this.mapels = response[1];
         });
         this.stepClass = 'stages';
+        this.bgClass = '';
+        this.mpClass = '';
     }
 
     stageAnimate(sg,bg){
@@ -36,8 +36,7 @@ class SelectItemsController{
     }
 
     getAction(data){
-        this.log.debug(this.sgClass);
-        this.log.debug(this.mpClass);
+        this.state.go('app.soal', {mapel: this.mpClass, stage: this.sgClass});
         this.log.debug(data);
     }
 

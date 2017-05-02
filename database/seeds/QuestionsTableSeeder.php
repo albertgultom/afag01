@@ -16,7 +16,7 @@ class QuestionsTableSeeder extends Seeder
 
       $_type = rand(1, 2);
 
-      foreach ((range(1, 150)) as $index) {
+      foreach ((range(1, 550)) as $index) {
         DB::table('questions')->insert([
           'mapel_id'=> rand(1, 6),
           'stage_id'=> rand(1, 6),
@@ -32,7 +32,7 @@ class QuestionsTableSeeder extends Seeder
           'explanation' => $faker->realText($maxNbChars = 60)
         ]);
       }
-      foreach ((range(1, 150)) as $index) {
+      foreach ((range(1, 550)) as $index) {
         DB::table('questions')->insert([
           'mapel_id'=> rand(1, 6),
           'stage_id'=> rand(1, 6),

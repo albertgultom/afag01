@@ -20,7 +20,8 @@ Route::post('auth/password/email', 'Auth\PasswordResetController@sendResetLinkEm
 Route::get('auth/password/verify', 'Auth\PasswordResetController@verify');
 Route::post('auth/password/reset', 'Auth\PasswordResetController@reset');
 
-Route::get('/home', 'StageController@home');
+Route::get('home', 'StageController@home');
+Route::get('soal', 'QuestionController@bank');
 
 //protected API routes with JWT (must be logged in)
 Route::get('/user', function (Request $request) {

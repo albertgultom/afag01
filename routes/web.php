@@ -21,6 +21,6 @@ Route::get('/unsupported-browser', 'AngularController@unsupported');
 Route::get('home', 'StageController@home');
 Route::get('quiz/{stage}/{mapel}/{type}', 'QuizzController@index');
 Route::get('quiz/show/{id}', 'QuizzController@show');
-Route::get('soal/{mapel}/{stage}', 'QuestionController@bank');
 
-Route::get('test/{stage}', 'QuestionController@test');
+
+Route::get('test/{req}', 'QuestionController@test');

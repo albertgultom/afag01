@@ -9,21 +9,38 @@ use App\Question;
 
 class QuestionController extends Controller
 {
-  public function bank($mapel,$stage)
+  public function bank(Request $request)
   {
-    $stage_id = DB::table('stages')->where('alias',$stage)->value('id');
-    $mapel_id = DB::table('mapels')->where('name',$mapel)->value('id');
+    $stage_id = DB::table('stages')->where('alias', $request->stage)->value('id');
+    $mapel = DB::table('mapels')->where('name', $request->mapel)->first();
+    $mapelname = $mapel->fullname;
 
-    $questions = Question::where([
-      ['stage_id',$stage_id],
-      ['mapel_id',$mapel_id],
-    ])->get();
+    $pg = Question::where([
+      ['stage_id', '<=', $stage_id],
+      ['mapel_id', $mapel->id],
+      ['type', 1]
+    ])
+    ->orderBy('type', 'asc')
+    ->orderBy('stage_id', 'desc')
+    ->orderBy('level', 'asc')
+    ->get();
 
-    return response()->json($questions);
+    $es = Question::where([
+      ['stage_id', '<=', $stage_id],
+      ['mapel_id', $mapel->id],
+      ['type', 2]
+    ])
+    ->orderBy('type', 'asc')
+    ->orderBy('stage_id', 'desc')
+    ->orderBy('level', 'asc')
+    ->get();
+
+    return response()->json([$pg, $es, $mapelname]);
   }
 
-  public function test($stage)
+  public function test($req)
   {
-    // dd($stage);
+    $_req = DB::table('mapels')->where('name', $req)->first();
+    dd($_req->fullname);
   }
 }
