@@ -11,21 +11,25 @@ class SelectItemsController{
         this.API.all('home').get('').then((response)=>{
             this.stages = response[0];
             this.mapels = response[1];
+            // this.log.debug(this.mapels);
         });
         this.stepClass = 'stages';
         this.bgClass = '';
         this.mpClass = '';
+
     }
 
-    stageAnimate(sg,bg){
+    stageAnimate(id, sg, bg){
         this.stepClass = 'mapels';
         this.bgClass = bg;
         this.sgClass = sg;
+        this.idStage = id;
     }
 
-    mapelAnimate(mp){
+    mapelAnimate(id, mp){
         this.stepClass = 'options';
         this.mpClass = mp;
+        this.idMapel = id;
         this.options = [
             {name:'Bank Soal', icon:'fa-list', action:'soal'},
             {name:'Ebook Soal', icon:'fa-book', action:'ebook'},
@@ -36,8 +40,8 @@ class SelectItemsController{
     }
 
     getAction(data){
-        this.state.go('app.soal', {mapel: this.mpClass, stage: this.sgClass});
-        this.log.debug(data);
+        this.state.go('app.soal', {mapel: this.idMapel, stage: this.idStage});
+        // this.log.debug(data);
     }
 
     goBack(response){

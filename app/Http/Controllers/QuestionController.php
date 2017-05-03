@@ -38,9 +38,40 @@ class QuestionController extends Controller
     return response()->json([$pg, $es, $mapelname]);
   }
 
-  public function test($req)
+  public function pg(Request $request)
   {
-    $_req = DB::table('mapels')->where('name', $req)->first();
-    dd($_req->fullname);
+    $pg = Question::where([
+      ['stage_id', '<=', $request->stage],
+      ['mapel_id', $request->mapel],
+      ['type', 1]
+    ])
+    ->orderBy('type', 'asc')
+    ->orderBy('stage_id', 'desc')
+    ->orderBy('level', 'asc')
+    ->paginate($request->show);
+
+    return response()->json($pg);
+  }
+
+  public function es(Request $request)
+  {
+    $es = Question::where([
+      ['stage_id', '<=', $request->stage],
+      ['mapel_id', $request->mapel],
+      ['type', 2]
+    ])
+    ->orderBy('type', 'asc')
+    ->orderBy('stage_id', 'desc')
+    ->orderBy('level', 'asc')
+    ->paginate($request->show);
+
+    return response()->json($es);
+  }
+
+  public function test(Request $request)
+  {
+    $_req = DB::table('questions')->where('type', 1)->paginate($request->show);
+    // dd($_req);
+    return response()->json($_req);
   }
 }

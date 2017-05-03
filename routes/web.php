@@ -23,4 +23,4 @@ Route::get('quiz/{stage}/{mapel}/{type}', 'QuizzController@index');
 Route::get('quiz/show/{id}', 'QuizzController@show');
 
 
-Route::get('test/{req}', 'QuestionController@test');
+Route::get('test', 'QuestionController@test');

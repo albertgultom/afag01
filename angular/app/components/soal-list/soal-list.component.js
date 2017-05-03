@@ -11,12 +11,16 @@ class SoalListController{
     $onInit(){
         let mapel = this.state.params.mapel;
         let stage = this.state.params.stage;
+        let show  = 10;
 
-        this.API.all('soal').get('',{mapel, stage}).then((res) => {
-           this.pgSoals = res[0];
-           this.esSoals = res[1];
-           this.mapel = res[2];
-           this.log.debug(res);
+        this.API.all('soal').get('pg',{mapel, stage, show}).then((res) => {
+           this.pgSoals = res.data;
+           // this.log.debug(res);
+        });
+
+        this.API.all('soal').get('es',{mapel, stage, show}).then((res) => {
+           this.esSoals = res.data;
+           // this.log.debug(res);
         });
     }
 }

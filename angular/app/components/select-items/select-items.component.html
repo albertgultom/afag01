@@ -3,7 +3,7 @@
     <div
       class="box-large" 
       ng-repeat="stage in vm.stages"
-      ng-click="vm.stageAnimate(stage.alias,stage.colour)"
+      ng-click="vm.stageAnimate(stage.id, stage.alias, stage.colour)"
       ng-show="vm.stepClass == 'stages'"
       flex="15"
       flex-sm="30"
@@ -32,7 +32,7 @@
       <div 
         class="box-width"
         ng-repeat="mapel in vm.mapels" 
-        ng-click="vm.mapelAnimate(mapel.name)"
+        ng-click="vm.mapelAnimate(mapel.id, mapel.name)"
         ng-show="vm.stepClass == 'mapels'">
         <span>{{mapel.fullname}}</span>
       </div>
