@@ -1,7 +1,24 @@
-<h1>Soal {{vm.mapel}}</h1>
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="More" ui-sref="app.landing">
+      <i class="fa fa-home fa-2x"></i>
+    </md-button>
+    
+    <h2 class="truncateTitle" flex>Soal {{vm.mapel}}</h2>
+    
+    <md-button class="md-icon-button" aria-label="Search">
+      <i class="fa fa-search fa-2x"></i>
+    </md-button>
+
+    <md-button class="md-icon-button" aria-label="More">
+      <md-icon class="fa fa-bars fa-2x"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+
 <md-tabs md-stretch-tabs="always" md-dynamic-height md-border-bottom>
   <md-tab label="Pilihan Ganda">
-    <md-content class="md-padding">
+    <md-content flex>
       <md-list-item class="md-2-line" ng-repeat="soal in vm.pgSoals" ng-click="null">
         <div class="md-list-item-text" layout="column">
           <h3>Kelas: {{soal.stage_id}}</h3>
@@ -12,6 +29,7 @@
       </md-list-item>
     </md-content>
   </md-tab>
+  
   <md-tab label="Essay">
     <md-content class="md-padding">
       <md-list-item class="md-2-line" ng-repeat="soal in vm.esSoals" ng-click="null">

@@ -6,21 +6,30 @@ class SoalListController{
         this.log = $log;
         this.state = $state;
         this.filter = $filter;
+        this.conditions = {};
     }
 
     $onInit(){
-        let mapel = this.state.params.mapel;
-        let stage = this.state.params.stage;
-        let show  = 10;
+        this.conditions = {
+            mapel: this.state.params.mapel,
+            stage: this.state.params.stage,
+            show: 10,
+            type: 1,
+            page: 2,
+        };
 
-        this.API.all('soal').get('pg',{mapel, stage, show}).then((res) => {
-           this.pgSoals = res.data;
-           // this.log.debug(res);
+        this.API.all('mapel').get(this.conditions.mapel).then((res) => {
+           this.mapel = res.fullname;
+           this.log.debug(res);
         });
 
-        this.API.all('soal').get('es',{mapel, stage, show}).then((res) => {
+        this.API.all('soal').get('', this.conditions).then((res) => {
+           this.pgSoals = res.data;
+        });
+
+        this.conditions.type = 2;
+        this.API.all('soal').get('', this.conditions).then((res) => {
            this.esSoals = res.data;
-           // this.log.debug(res);
         });
     }
 }

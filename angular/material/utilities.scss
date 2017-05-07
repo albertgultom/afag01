@@ -3,6 +3,13 @@
 .u-center{
     text-align: center;
 }
+.truncateTitle{
+  max-height: 2em;
+  line-height: 2.3em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .box-large.ng-enter,
 .box-large.ng-hide-remove{
   @include bounceIn($duration:.5s);

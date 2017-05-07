@@ -41,7 +41,7 @@ class SelectItemsController{
 
     getAction(data){
         this.state.go('app.soal', {mapel: this.idMapel, stage: this.idStage});
-        // this.log.debug(data);
+        this.log.debug(data);
     }
 
     goBack(response){
