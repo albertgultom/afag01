@@ -1,9 +1,10 @@
 .box-large{
-  margin: 1px;
+  margin: .2vw;
   font-size: 5em;
   text-align: center;
-  line-height: 160px;
+  line-height: 147px;
   color: whitesmoke;
+  border-top: solid 3px;
 }
 .boxwidth{
   margin:0 25px;
@@ -34,17 +35,18 @@
   padding-bottom: 25px;
   background: whitesmoke;
 }
-.box-large:hover,
+.box-large:hover{
+  background-color: transparent !important;
+}
 .box-width:hover{
   opacity: .7;
 }
 .get-option{
   text-align: center;
-  border-radius: 5px;
   padding-top: 15px;
-  margin: 0 1px;
+  margin: 0 2px -12px 2px;
   background-color: whitesmoke;
   p{
-    min-height: 45px;
+    min-height: 43px;
   }
 }

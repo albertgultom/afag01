@@ -18,12 +18,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 			abstract: true,
             data: {},
 			views: {
-				// header: {
-				// 	templateUrl: getView('header')
-				// },
-				// footer: {
-				// 	templateUrl: getView('footer')
-				// },
+				header: {},
+				footer: {},
 				main: {}
 			}
 		})

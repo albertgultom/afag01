@@ -3,6 +3,19 @@
 .u-center{
     text-align: center;
 }
+.top-fixed{
+  position: fixed;
+}
+.top-sheet{
+  position: fixed;
+  top: 64px;
+  z-index: 1;
+  height: 46px;
+  width: 100vw;
+}
+.body-padding{
+  margin-top: 64px;
+}
 .truncateTitle{
   max-height: 2em;
   line-height: 2.3em;
@@ -34,5 +47,19 @@
 @media screen and (min-width: 600px) {
   .boxchoosing{
     padding-left: 6px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .boxstage,
+  .boxmapel{
+    margin: 0 2px;
+  }
+}
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: portrait){
+  .body-padding{
+    margin-top: 56px;
+  }
+  .top-sheet{
+    top: 56px;
   }
 }

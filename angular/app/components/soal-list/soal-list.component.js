@@ -20,7 +20,7 @@ class SoalListController{
 
         this.API.all('mapel').get(this.conditions.mapel).then((res) => {
            this.mapel = res.fullname;
-           this.log.debug(res);
+           // this.log.debug(res);
         });
 
         this.API.all('soal').get('', this.conditions).then((res) => {
